@@ -1,3 +1,4 @@
-<p>
-  stories works!
-</p>
+<article *ngFor="let story of stories">
+  <h3><a routerLink="/story/{{story.Id}}">{{story.Title}}</a></h3>
+  <p>{{story.Description}}</p>
+</article>

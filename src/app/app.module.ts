@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrismicService } from './prismic.service';
 import { LinksComponent } from './links/links.component';
-import { IndexComponent } from './index/index.component';
+import { IndexComponent } from './routes/index/index.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { StoriesComponent } from './stories/stories.component';
+import { StoryComponent } from './routes/story/story.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { StoriesComponent } from './stories/stories.component';
     LinksComponent,
     IndexComponent,
     ResourcesComponent,
-    StoriesComponent
+    StoriesComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

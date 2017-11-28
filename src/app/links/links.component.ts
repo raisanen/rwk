@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrismicService } from '../prismic.service';
-import { PrismicHelper } from '../prismic.helper';
+import { PrismicDocument } from '../prismic-document';
 
 @Component({
   selector: 'app-links',
@@ -8,7 +8,7 @@ import { PrismicHelper } from '../prismic.helper';
   styleUrls: ['./links.component.scss']
 })
 export class LinksComponent implements OnInit {
-  private links:any[] = [];
+  private links:PrismicDocument[] = [];
   constructor(private prismicService: PrismicService) {}
 
   ngOnInit() {
@@ -17,14 +17,8 @@ export class LinksComponent implements OnInit {
 
   getLinks():void {
     this.prismicService.getLinks().subscribe(sres => {
-      this.links = sres.results.map(r => {
-        return {
-          title: PrismicHelper.GetText(r, 'title'),
-          description: PrismicHelper.GetText(r, 'description'),
-          links: PrismicHelper.GetArray(r, 'links')
-        }
-      });
-
+      console.log(sres);
+      this.links = PrismicDocument.FromResults(sres.results);
       console.log(this.links);
     })
   }

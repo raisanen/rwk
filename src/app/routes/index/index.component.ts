@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PrismicService } from '../prismic.service';
-import { PrismicHelper } from '../prismic.helper';
+import { PrismicService } from '../../prismic.service';
+import { PrismicDocument } from '../../prismic-document';
 
 @Component({
   selector: 'app-index',
@@ -8,7 +8,7 @@ import { PrismicHelper } from '../prismic.helper';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  private root:any = {title: '', about: ''};
+  private root:PrismicDocument = new PrismicDocument();
 
   constructor(private prismicService: PrismicService) { }
 
@@ -18,11 +18,7 @@ export class IndexComponent implements OnInit {
 
   getRoot(): void {
     this.prismicService.getRoot().subscribe(resp => {
-      var rootDoc = resp.results[0];
-      this.root = {
-        title: PrismicHelper.GetText(rootDoc, 'site_title'),
-        about: PrismicHelper.GetText(rootDoc, 'about_text')
-      }
+      this.root = PrismicDocument.FromResults(resp.results)[0];
     });
   }
 }
