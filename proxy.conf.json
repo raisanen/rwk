@@ -1,0 +1,7 @@
+{
+	"/api": {
+		"target": "http://retrocomputing-with-kalle.prismic.io/",
+		"secure": false,
+		"changeOrigin": true
+	}
+}

@@ -1,0 +1,12 @@
+<section role="list">
+  <article *ngFor="let link of links">
+    <h2>{{link.title}}</h2>
+    <p [innerHtml]="link.description"></p>
+    <ul class="links">
+      <li class="link" *ngFor="let ln of link.links">
+        <a href="{{ln.link.url}}">{{ln.name}}</a>
+      </li>
+    </ul>
+  </article>
+</section>
+

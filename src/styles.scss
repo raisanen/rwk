@@ -1,1 +1,133 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+    background-color: #f0f0f0;
+}
+
+body > app-root > article {
+	margin: 0 0 100px;
+
+	>header,
+	>section {
+		padding: 0 100px;
+	}
+	>section {
+		width: 60rem;
+		max-width: 99%;
+	}
+}
+
+a {
+    color: crimson;
+    text-decoration: none;
+	position: relative;
+
+	&:hover {
+		text-decoration: #000 underline;
+	}
+
+	> .fa {
+		display: inline-block;
+		position: relative;
+		font-size: .6rem;
+		top: -.25rem;
+	}
+}
+
+h1, h2, h3 {
+	font-family: inherit;
+	font-weight: bold;
+}
+
+ul.tags {
+	$tag_height: 24px;
+	$tag_margin: $tag_height/2;
+
+    list-style-type: none;
+    margin: $tag_margin 0;
+	padding: 0;
+
+	li.tag {
+        height: $tag_height;
+        padding: ($tag_margin/2) $tag_margin 0;
+        display: inline-block;
+        position: relative;
+        margin-left: $tag_margin;
+        font-size: .9rem;
+        cursor: pointer;
+		background-color: #ccc;
+
+		&:before {
+			content:"";
+			float:left;
+			position:absolute;
+			top:0;
+			left:-$tag_margin;
+			width:0;
+			height:0;
+			border-color:transparent #ccc transparent transparent;
+			border-style:solid;
+			border-width: $tag_margin $tag_margin $tag_margin 0;		
+		}
+
+		&.active,
+		&:hover {
+			background-color: crimson;
+			color: #fff;
+			&:before {
+				border-right-color: crimson;
+			}
+		}
+    }
+}
+
+nav {
+    position: relative;
+    background: #000;
+    height: auto;
+	padding: 15px 0 15px 100px;
+	
+
+	#nav-button {
+		display: none;
+	}
+
+	#nav-list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		font-size: 1.2rem;
+		word-spacing: 1rem;
+
+		li {
+			display: inline-block;
+
+			&:after {
+				display: inline-block;
+				color: #fff;
+				content: '/';
+				margin-left: 1rem;
+			}
+
+			&:last-child:after {
+				display: none;
+			}
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				&:hover {
+					background: #fff;
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
