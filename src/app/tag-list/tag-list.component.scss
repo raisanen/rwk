@@ -1,0 +1,64 @@
+ul.tag-list {
+	$tag_height: 22px;
+	$tag_margin: 14px;
+
+    list-style-type: none;
+    margin: $tag_margin 0;
+	padding: 0;
+
+	font-size: .6rem;
+
+	li.title, li.tag {
+        display: inline-block;
+        position: relative;
+        
+        height: $tag_height;
+
+        padding: ($tag_margin/3) 0 0;
+	}
+
+	li.title {
+		font-size: .8rem;
+		font-weight: bold;
+	}
+
+	li.tag {
+		min-width: 1.5rem;
+
+		margin-left: $tag_height;
+		padding-left: $tag_margin/3;
+		padding-right: $tag_margin/2;
+
+        cursor: pointer;
+		text-align: right;
+
+		background-color: #ccc;
+		color: #000;
+
+		a {
+			color: inherit;
+		}
+
+		&:before {
+			content:"";
+			float:left;
+			position:absolute;
+			top:0;
+			left:-$tag_margin;
+			width:0;
+			height:0;
+			border-color:transparent #ccc transparent transparent;
+			border-style:solid;
+			border-width: $tag_margin $tag_margin $tag_margin 0;		
+		}
+
+		&.active,
+		&:hover {
+			background-color: crimson;
+			color: #fff;
+			&:before {
+				border-right-color: crimson;
+			}
+		}
+    }
+}
