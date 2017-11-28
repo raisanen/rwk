@@ -112,6 +112,6 @@ export class PrismicFile extends PrismicLink {
 
 	constructor(name:string, type:string, url:string, meta:any){
 		super(name, type, url);
-		this.Meta
+		this.Meta = meta;
 	}
 }
