@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { PrismicService } from './prismic.service';
 import { LinksComponent } from './links/links.component';
 import { IndexComponent } from './index/index.component';
+import { ResourcesComponent } from './resources/resources.component';
+import { StoriesComponent } from './stories/stories.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LinksComponent,
-    IndexComponent
+    IndexComponent,
+    ResourcesComponent,
+    StoriesComponent
   ],
   imports: [
     BrowserModule,

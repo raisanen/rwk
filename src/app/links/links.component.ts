@@ -17,7 +17,6 @@ export class LinksComponent implements OnInit {
 
   getLinks():void {
     this.prismicService.getLinks().subscribe(sres => {
-      console.log(sres.results);
       this.links = sres.results.map(r => {
         return {
           title: PrismicHelper.GetText(r, 'title'),

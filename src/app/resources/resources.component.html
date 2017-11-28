@@ -1,0 +1,7 @@
+<section role="list">
+    <article *ngFor="let res of resources">
+      <h2>{{res.title}}</h2>
+      <p [innerHtml]="res.description"></p>
+
+    </article>
+  </section>
