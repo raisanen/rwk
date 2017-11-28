@@ -8,12 +8,20 @@ import { PrismicDocument } from '../../prismic-document';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  private root:PrismicDocument = new PrismicDocument();
+  private root: PrismicDocument = new PrismicDocument();
+  private allTags: string[] = [];
 
   constructor(private prismicService: PrismicService) { }
 
   ngOnInit() {
     this.getRoot();
+    this.getAllTags();
+  }
+
+  getAllTags(): void {
+    this.prismicService.getMasterRef().subscribe(resp => {
+      this.allTags = resp.tags || [];
+    });
   }
 
   getRoot(): void {

@@ -1,5 +1,9 @@
-<section role="banner">
+<section role="banner" id="about">
 	<div [innerHtml]="root.Description"></div>
+</section>
+<section role="navigation">
+	<h2>Filter</h2>
+	<app-tag-list [tags]="allTags"></app-tag-list>		
 </section>
 <app-stories></app-stories>
 <app-resources></app-resources>

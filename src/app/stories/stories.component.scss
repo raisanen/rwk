@@ -1,0 +1,15 @@
+a.button {
+    display: inline-block;
+
+    padding: .2rem .5rem;
+
+    cursor: pointer;
+
+    background-color: #666;
+    color: white;
+    
+    &:hover {
+        text-decoration: none;
+        background-color: crimson;
+    }
+}

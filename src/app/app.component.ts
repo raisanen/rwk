@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PrismicService } from './prismic.service';
-import { PrismicHelper } from './prismic.helper';
 
 @Component({
   selector: 'app-root',

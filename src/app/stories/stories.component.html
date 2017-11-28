@@ -1,4 +1,17 @@
-<article *ngFor="let story of stories">
-  <h3><a routerLink="/story/{{story.Id}}">{{story.Title}}</a></h3>
-  <p>{{story.Description}}</p>
-</article>
+<section role="feed" class="feed" id="stories">
+  <h2>Stories</h2>
+  <article *ngFor="let story of stories">
+      <section *ngIf="hasActiveTag(story)">
+        <h3>{{story.Title}}</h3>
+        <div *ngIf="currReadMore !== story.Id" [innerHtml]="story.Description"></div>
+        <div *ngIf="currReadMore === story.Id" [innerHtml]="story.Content"></div>
+
+        <a class="button" (click)="readMore(story.Id)">
+            <span *ngIf="currReadMore !== story.Id">Read more</span>
+            <span *ngIf="currReadMore === story.Id">Read less</span>
+        </a>
+    
+        <app-tag-list [tags]="story.tags"></app-tag-list>    
+      </section>
+    </article>     
+</section>

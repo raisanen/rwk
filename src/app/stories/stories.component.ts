@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PrismicService } from '../prismic.service';
+import { ActiveTagService } from '../activetag.service';
 import { PrismicDocument } from '../prismic-document';
+
+import { ContentWithTagsComponent } from '../content-with-tags/content-with-tags.component';
 
 @Component({
   selector: 'app-stories',
@@ -8,20 +11,25 @@ import { PrismicDocument } from '../prismic-document';
   styleUrls: ['./stories.component.scss']
 })
 
-export class StoriesComponent implements OnInit {
-  stories:PrismicDocument[] = [];
+export class StoriesComponent extends ContentWithTagsComponent implements OnInit {
+  stories: PrismicDocument[] = [];
+  private currReadMore = '';
 
-  constructor(private prismicService: PrismicService) { }
+  constructor(private prismicService: PrismicService, protected activeTagService: ActiveTagService) {
+    super(activeTagService);
+  }
 
   ngOnInit() {
-    this.getStories()
+    this.getStories();
   }
 
   getStories() {
     this.prismicService.getStories().subscribe(res => {
-      console.log(res);
       this.stories = PrismicDocument.FromResults(res.results);
-      console.log(this.stories);
     });
+  }
+
+  readMore(id: string) {
+    this.currReadMore = this.currReadMore === id ? '' : id;
   }
 }

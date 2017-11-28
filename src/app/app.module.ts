@@ -5,13 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PrismicService } from './prismic.service';
 import { LinksComponent } from './links/links.component';
 import { IndexComponent } from './routes/index/index.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { StoriesComponent } from './stories/stories.component';
 import { StoryComponent } from './routes/story/story.component';
+import { TagListComponent } from './tag-list/tag-list.component';
 
+import { PrismicService } from './prismic.service';
+import { ActiveTagService } from './activetag.service';
+import { ContentWithTagsComponent } from './content-with-tags/content-with-tags.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,15 @@ import { StoryComponent } from './routes/story/story.component';
     IndexComponent,
     ResourcesComponent,
     StoriesComponent,
-    StoryComponent
+    StoryComponent,
+    TagListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [PrismicService],
+  providers: [PrismicService, ActiveTagService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

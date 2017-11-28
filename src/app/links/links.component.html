@@ -1,12 +1,15 @@
-<section role="list">
+<section role="list" class="list" id="links">
+  <h2>Links</h2>
   <article class="link" *ngFor="let link of links">
-    <h2>{{link.Title}}</h2>
-    <p [innerHtml]="link.description"></p>
-    <ul class="links">
-      <li class="link" *ngFor="let ln of link.Links">
-        <a href="{{ln.Url}}" class="link-{{ln.Type}}">{{ln.Name}}</a>
-      </li>
-    </ul>
+    <section *ngIf="hasActiveTag(link)">
+      <h3>{{link.Title}}</h3>
+      <p [innerHtml]="link.description"></p>
+      <ul class="links">
+        <li class="link" *ngFor="let ln of link.Links">
+          <a href="{{ln.Url}}" class="link-{{ln.Type}}">{{ln.Name}}</a>
+        </li>
+      </ul>
+      <app-tag-list [tags]="link.tags"></app-tag-list>
+    </section>
   </article>
 </section>
-
