@@ -11,7 +11,15 @@ html {
 }
 
 code, pre {
+	display: block;
+
+	padding: 10px 12px;
+
 	font-family: $font_mono;
+	white-space: pre-wrap;
+
+	background-color: $color_tag;
+	color: #088;
 }
 
 body > app-root > article {
@@ -77,6 +85,14 @@ ul.links {
 
     li.link {
         display: inline-block;
-        margin-right: 2rem;
+		margin-right: 2rem;
+					
+		a {
+			color: $color_link;
+			&:hover {
+				color: $color_body;
+				text-decoration-color: $color_link;
+			}
+		}
     }
 }

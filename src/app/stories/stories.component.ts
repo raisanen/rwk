@@ -43,6 +43,7 @@ export class StoriesComponent extends ContentWithTagsComponent implements OnInit
 
   getStories() {
     this.prismicService.getStories().subscribe(res => {
+      console.log(res);
       this.stories = PrismicDocument.FromResults(res.results);
       this.allTags = [];
       this.tagCounts = {};

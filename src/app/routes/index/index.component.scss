@@ -26,14 +26,6 @@ footer {
 		&:first-child {
 			margin-right: 2%;			
 		}
-		
-		a {
-			color: $color_link;
-
-			&:hover {
-				color: $color_body;
-				text-decoration-color: $color_body;
-			}
-		}
 	}
 }
+

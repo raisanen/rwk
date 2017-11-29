@@ -30,7 +30,7 @@ export class PrismicDocument {
 
 	getText(key: string): string {
 		return this.findObject(key).map(obj => {
-			let res: string = null;
+			let res: string = null, text = '';
 			switch (obj.type) {
 				case 'heading1':
 				case 'heading2':
@@ -38,9 +38,11 @@ export class PrismicDocument {
 				case 'heading4':
 					res = obj.text;
 					break;
+				case 'preformatted':
+					res = '<code>' + insertSpans(obj.text, obj.spans) + '</code>';
+					break;
 				case 'paragraph':
-					let text = insertSpans(obj.text, obj.spans);
-					res = `<p>${text}</p>`;
+					res = '<p>' + insertSpans(obj.text, obj.spans) + '</p>';
 					break;
 			}
 			return res;
