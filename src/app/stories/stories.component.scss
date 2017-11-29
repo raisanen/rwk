@@ -32,6 +32,7 @@ a.button {
         }
 
         .body {
+            overflow: hidden;
             border-top: 1px dotted $color_tag;
         }
         & + .single-story {
@@ -39,6 +40,7 @@ a.button {
         }
     }
     .story-content {
+
         > i.fa {
             display: block;
             float: left;

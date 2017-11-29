@@ -8,7 +8,11 @@ html {
     padding: 0;
     font-family: $font_body;
     font-size: 20px;
-    background-color: $color_body;
+	background: #f0f2f0; /* Old browsers */
+	background: -moz-linear-gradient(left, #f0f2f0 0%, #e8e8e8 50%, #f0f2f0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #f0f2f0 0%,#e8e8e8 50%,#f0f2f0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #f0f2f0 0%,#e8e8e8 50%,#f0f2f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f2f0', endColorstr='#f0f2f0',GradientType=1 ); /* IE6-9 */
 }
 
 code, pre {
@@ -47,7 +51,7 @@ body > app-root > article {
 	section.content {
 		margin: 15px auto;
 		width: 50rem;
-		max-width: 98%;
+		max-width: 95%;
 	}
 }
 
@@ -72,6 +76,9 @@ h1, h2, h3 {
 	font-family: $font_head;
 	font-weight: bold;
 	margin: .2rem 0;
+	i.fa {
+		font-size: 80%;
+	}
 }
 
 h1 {
@@ -116,4 +123,85 @@ ul.links {
 			}
 		}
     }
+}
+
+img.inline-image {
+	float: right;
+	max-width: 50%;
+	max-height: 40vh;
+	margin: 12px 0;
+}
+
+ul.tag-list, ul.option-list {
+    $tag_height: 22px;
+    $tag_margin: 14px;
+    height: auto;
+    margin: $tag_margin 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: $font_mono;
+    font-size: .9rem;
+    li.title,
+	li.tag,
+	li.option {
+        display: inline-block;
+        position: relative;
+        height: $tag_height;
+        padding: ($tag_margin/3) 0 0;
+        margin-bottom: .5rem;
+    }
+    li.title {
+        height: 100%;
+        font-weight: bold;
+    }
+    li.tag, li.option {
+        min-width: 1.5rem;
+        margin-left: $tag_height;
+        padding-left: $tag_margin/3;
+        padding-right: $tag_margin/2;
+        cursor: pointer;
+        text-align: right;
+        background-color: $color_tag;
+        color: $color_text;
+        a {
+            color: inherit;
+		}
+		&.active,
+        &:hover {
+            background-color: $color_link;
+            color: $color_body;
+        }
+	}
+	li.tag {
+		&:before {
+            content: '';
+            float: left;
+            position: absolute;
+            top: 0;
+            left: -$tag_margin;
+            width: 0;
+            height: 0;
+            border-color: transparent $color_tag transparent transparent;
+            border-style: solid;
+            border-width: $tag_margin $tag_margin $tag_margin 0;
+        }
+        &.active,
+        &:hover {
+            &:before {
+                border-right-color: $color_link;
+            }
+        }
+	}
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.4rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
 }

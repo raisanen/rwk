@@ -35,3 +35,17 @@ footer {
 	}
 }
 
+@media (max-width: 600px) {
+	footer {
+		padding-left:  2%;
+		padding-right: 2%;
+		aside {
+			width: 100%;
+			margin-bottom: 40px;
+			
+			&:first-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

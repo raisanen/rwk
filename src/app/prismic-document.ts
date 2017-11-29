@@ -48,6 +48,11 @@ export class PrismicDocument {
 				case 'paragraph':
 					res = '<p>' + insertSpans(obj.text, obj.spans) + '</p>';
 					break;
+				case 'image':
+					res = `<img class="inline-image" src="${obj.url}" alt="${obj.alt}"/>`
+				default:
+					console.log(obj);
+					break;
 			}
 			return res;
 		}).join('');
@@ -97,7 +102,7 @@ export class PrismicDocument {
 
 	get Files(): PrismicFile[] {
 		return (this.getArray('files') || []).map(f => {
-			return new PrismicFile(f.name, f.link_type, f.url, f);
+			return new PrismicFile(f.name, f.file.link_type, f.file.url, f.file);
 		});
 	}
 }

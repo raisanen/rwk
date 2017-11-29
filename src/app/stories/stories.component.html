@@ -1,10 +1,15 @@
 <h2><i class="fa fa-keyboard-o"></i>  Stories</h2>
 <section role="navigation" class="filter">
-  <app-tag-list [tags]="allTags" [counts]="tagCounts" [title]="'Filter stories'"></app-tag-list>		
+  <app-tag-list [tags]="allTags" [counts]="tagCounts" [title]="'Filter stories'"></app-tag-list>
+  <ul class="option-list">
+    <li class="title">Sort stories:</li>
+    <li class="option" (click)="setOrder(false)" [class.active]="orderDescending === false">ascending</li>
+    <li class="option" (click)="setOrder(true)" [class.active]="orderDescending === true">descending</li>
+  </ul>
 </section>
 <section role="feed" class="feed stories-list" id="stories">
   <article *ngFor="let story of stories" class="single-story">
-      <section *ngIf="hasActiveTag(story)" class="story-content">
+      <section *ngIf="hasActiveTag(story)" class="story-content" [@visible]="hasActiveTag(story) ? 'yes' : ''">
         <i class="fa fa-file-text-o"></i>
         <h3>
           {{story.Title}}
