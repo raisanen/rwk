@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { PrismicService } from '../prismic.service';
 import { ActiveTagService } from '../activetag.service';
 import { PrismicDocument } from '../prismic-document';

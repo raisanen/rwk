@@ -2,6 +2,7 @@
   <article *ngFor="let story of stories" class="single-story">
       <section *ngIf="hasActiveTag(story)">
         <h3>{{story.Title}}</h3>
+        <h4>{{story.Date | date:'yyyy-MM-dd'}}</h4>
         <div class="intro" [innerHtml]="story.Description"></div>
         <div class="body"  *ngIf="currReadMore === story.Id" [innerHtml]="story.Content"></div>
 
