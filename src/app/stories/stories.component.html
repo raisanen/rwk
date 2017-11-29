@@ -1,11 +1,14 @@
-<h2>Stories</h2>
+<h2><i class="fa fa-keyboard-o"></i>  Stories</h2>
 <section role="navigation" class="filter">
   <app-tag-list [tags]="allTags" [counts]="tagCounts" [title]="'Filter stories'"></app-tag-list>		
 </section>
 <section role="feed" class="feed stories-list" id="stories">
   <article *ngFor="let story of stories" class="single-story">
-      <section *ngIf="hasActiveTag(story)">
-        <h3>{{story.Title}}</h3>
+      <section *ngIf="hasActiveTag(story)" class="story-content">
+        <i class="fa fa-file-text-o"></i>
+        <h3>
+          {{story.Title}}
+        </h3>
         <h4>{{story.Date | date:'yyyy-MM-dd'}}</h4>
         <div class="intro" [innerHtml]="story.Description"></div>
         
@@ -16,8 +19,8 @@
         </div>
 
         <a class="button" (click)="readMore(story.Id)">
-            <span *ngIf="currReadMore !== story.Id">Read more &rsaquo;</span>
-            <span *ngIf="currReadMore === story.Id">Read less ^</span>
+            <span *ngIf="currReadMore !== story.Id">Read more <i class="fa fa-caret-down"></i></span>
+            <span *ngIf="currReadMore === story.Id">Read less <i class="fa fa-caret-up"></i></span>
         </a>
     
         <app-tag-list [tags]="story.tags"></app-tag-list>    

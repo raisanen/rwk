@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:900|VT323|Zilla+Slab:400,400i,700,700i');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import './app/settings.scss';
 
 body,
@@ -20,6 +21,23 @@ code, pre {
 
 	background-color: $color_tag;
 	color: #088;
+
+	span.meta {
+		display: inline-block;
+		margin: 0 .1rem;
+
+		color: lighten($color_foot, 33%);
+		
+		&:before, &:after {
+			color: lighten($color_foot, 50%);
+		}
+		&:before {
+			content: '<';
+		}
+		&:after {
+			content: '>';
+		}
+	}
 }
 
 body > app-root > article {
@@ -64,13 +82,16 @@ h1 {
 	}
 }
 h2 {
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 }
 h3 {
 	font-size: 1rem;
 	margin: 1rem 0 .5rem;
 }
 
+i.fa {
+	margin-right: .2rem;
+ }
 
 article.link, article.resource {
 	font-size: 16px;

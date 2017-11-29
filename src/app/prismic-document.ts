@@ -30,16 +30,20 @@ export class PrismicDocument {
 
 	getText(key: string): string {
 		return this.findObject(key).map(obj => {
-			let res: string = null, text = '';
+			let res: string = null;
 			switch (obj.type) {
 				case 'heading1':
 				case 'heading2':
 				case 'heading3':
-				case 'heading4':
 					res = obj.text;
 					break;
+				case 'heading4':
+					res = `<h4>${obj.text}</h4>`;
+					break;
 				case 'preformatted':
-					res = '<code>' + insertSpans(obj.text, obj.spans) + '</code>';
+					let text = insertSpans(obj.text, obj.spans);
+					text = text.replace(/\[\[(\w+)\]\]/g, '<span class="meta">$1</span>');
+					res = '<code>' + text + '</code>';
 					break;
 				case 'paragraph':
 					res = '<p>' + insertSpans(obj.text, obj.spans) + '</p>';

@@ -38,4 +38,14 @@ a.button {
             border-top: 1px dotted $color_tag;
         }
     }
+    .story-content {
+        > i.fa {
+            display: block;
+            float: left;
+
+            margin: .2rem .3rem 0 0;
+
+            font-size: 1.7rem;
+        }
+    }
 }
