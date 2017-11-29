@@ -8,6 +8,7 @@ import { ActiveTagService } from '../activetag.service';
 })
 export class TagListComponent implements OnInit {
   @Input() tags: string[];
+  @Input() counts: any;
   @Input() title = 'Tags';
 
   private activeTag = '';
@@ -17,6 +18,10 @@ export class TagListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  formatCount(tag: string): string {
+    return this.counts ? '(' + (this.counts[tag] || 0) + ')' : '';
   }
 
   setTag(tag: string) {

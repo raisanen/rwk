@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:900|VT323|Zilla+Slab:400,400i,700,700i');
+@import './app/settings.scss';
+
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Zilla Slab', serif;
+    font-family: $font_body;
     font-size: 20px;
-    background-color: #f0f0f0;
+    background-color: $color_body;
 }
 
 code, pre {
-	font-family: 'VT323', monospace;
+	font-family: $font_mono;
 }
 
 body > app-root > article {
@@ -24,12 +26,12 @@ body > app-root > article {
 }
 
 a {
-    color: crimson;
+    color: $color_link;
     text-decoration: none;
 	position: relative;
 
 	&:hover {
-		text-decoration: #000 underline;
+		text-decoration: $color_text underline;
 	}
 
 	> .fa {
@@ -41,7 +43,7 @@ a {
 }
 
 h1, h2, h3 {
-	font-family: 'Rubik', sans-serif;
+	font-family: $font_head;
 	font-weight: bold;
 	margin: .2rem 0;
 }

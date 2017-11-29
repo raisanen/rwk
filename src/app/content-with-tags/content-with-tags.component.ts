@@ -7,7 +7,6 @@ export class ContentWithTagsComponent {
   constructor(protected activeTagService: ActiveTagService) {
     activeTagService.activeTagChanged$.subscribe(tag => {
       this.selectedTag = this.selectedTag === tag ? '' : tag;
-      console.log(tag);
     });
   }
 

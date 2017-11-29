@@ -1,3 +1,5 @@
+@import '../../settings.scss';
+
 section.about {
 	font-size: .9rem;
 }
@@ -14,8 +16,8 @@ footer {
 
 	font-size: 12px;
 
-	background-color: #333;
-	color: #fff;
+	background-color: $color_foot;
+	color: $color_body;
 
 	aside {
 		float: left;
@@ -23,6 +25,15 @@ footer {
 
 		&:first-child {
 			margin-right: 2%;			
+		}
+		
+		a {
+			color: $color_link;
+
+			&:hover {
+				color: $color_body;
+				text-decoration-color: $color_body;
+			}
 		}
 	}
 }

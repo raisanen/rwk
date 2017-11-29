@@ -1,67 +1,56 @@
+@import '../settings.scss';
 ul.tag-list {
-	$tag_height: 22px;
-	$tag_margin: 14px;
-
-	height: auto;
+    $tag_height: 22px;
+    $tag_margin: 14px;
+    height: auto;
     margin: $tag_margin 0;
-	padding: 0;
-	
+    padding: 0;
     list-style-type: none;
-	
-	font-family: 'VT323', monospace;
-	font-size: .9rem;
-
-	li.title, li.tag {
+    font-family: $font_mono;
+    font-size: .9rem;
+    li.title,
+    li.tag {
         display: inline-block;
         position: relative;
         height: $tag_height;
-		
-		padding: ($tag_margin/3) 0 0;
-		margin-bottom: .5rem;
-	}
-
-	li.title {
-		height: 100%;
-		font-weight: bold;
-	}
-
-	li.tag {
-		min-width: 1.5rem;
-
-		margin-left: $tag_height;
-		padding-left: $tag_margin/3;
-		padding-right: $tag_margin/2;
-
+        padding: ($tag_margin/3) 0 0;
+        margin-bottom: .5rem;
+    }
+    li.title {
+        height: 100%;
+        font-weight: bold;
+    }
+    li.tag {
+        min-width: 1.5rem;
+        margin-left: $tag_height;
+        padding-left: $tag_margin/3;
+        padding-right: $tag_margin/2;
         cursor: pointer;
-		text-align: right;
-
-		background-color: #ccc;
-		color: #000;
-
-		a {
-			color: inherit;
-		}
-
-		&:before {
-			content:"";
-			float:left;
-			position:absolute;
-			top:0;
-			left:-$tag_margin;
-			width:0;
-			height:0;
-			border-color:transparent #ccc transparent transparent;
-			border-style:solid;
-			border-width: $tag_margin $tag_margin $tag_margin 0;		
-		}
-
-		&.active,
-		&:hover {
-			background-color: crimson;
-			color: #fff;
-			&:before {
-				border-right-color: crimson;
-			}
-		}
+        text-align: right;
+        background-color: $color_tag;
+        color: $color_text;
+        a {
+            color: inherit;
+        }
+        &:before {
+            content: '';
+            float: left;
+            position: absolute;
+            top: 0;
+            left: -$tag_margin;
+            width: 0;
+            height: 0;
+            border-color: transparent $color_tag transparent transparent;
+            border-style: solid;
+            border-width: $tag_margin $tag_margin $tag_margin 0;
+        }
+        &.active,
+        &:hover {
+            background-color: $color_link;
+            color: $color_body;
+            &:before {
+                border-right-color: $color_link;
+            }
+        }
     }
 }

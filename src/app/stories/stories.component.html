@@ -1,3 +1,7 @@
+<h2>Stories</h2>
+<section role="navigation" class="filter">
+  <app-tag-list [tags]="allTags" [counts]="tagCounts" [title]="'Filter stories'"></app-tag-list>		
+</section>
 <section role="feed" class="feed stories-list" id="stories">
   <article *ngFor="let story of stories" class="single-story">
       <section *ngIf="hasActiveTag(story)">

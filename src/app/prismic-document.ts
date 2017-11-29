@@ -25,7 +25,7 @@ export class PrismicDocument {
 	}
 
 	get Tags(): string[] {
-		return this.tags;
+		return (this.tags || []).sort();
 	}
 
 	getText(key: string): string {

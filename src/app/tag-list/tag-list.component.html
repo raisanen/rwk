@@ -1,6 +1,6 @@
 <ul class="tag-list">
   <li class="title" *ngIf="tags.length > 0">{{title}}:</li>
   <li *ngFor="let tag of tags" class="tag" [class.active]="tag === activeTag" (click)="setTag(tag)">
-    {{tag}}
+    {{tag}} {{formatCount(tag)}}
   </li>
 </ul>

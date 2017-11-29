@@ -1,3 +1,5 @@
+@import '../settings.scss';
+
 a.button {
     display: inline-block;
 
@@ -5,14 +7,14 @@ a.button {
     margin: 10px 0;
 
     cursor: pointer;
-    font-family: 'VT323', monospace;
+    font-family: $font_mono;
 
-    background-color: #666;
-    color: white;
+    background-color: $color_button;
+    color: $color_body;
     
     &:hover {
         text-decoration: none;
-        background-color: crimson;
+        background-color: $color_link;
     }
 }
 
@@ -26,14 +28,14 @@ a.button {
         h4 {
             margin-top: 0;
 
-            font-family:  'VT323', monospace;
+            font-family:  $font_mono;
         }
 
         .body {
-            border-top: 1px dotted #999;
+            border-top: 1px dotted $color_tag;
         }
         & + .single-story {
-            border-top: 1px dotted black;            
+            border-top: 1px dotted $color_tag;
         }
     }
 }
