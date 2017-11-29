@@ -9,7 +9,6 @@ import { LinksComponent } from './links/links.component';
 import { IndexComponent } from './routes/index/index.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { StoriesComponent } from './stories/stories.component';
-import { StoryComponent } from './routes/story/story.component';
 import { TagListComponent } from './tag-list/tag-list.component';
 
 import { PrismicService } from './prismic.service';
@@ -23,7 +22,6 @@ import { ContentWithTagsComponent } from './content-with-tags/content-with-tags.
     IndexComponent,
     ResourcesComponent,
     StoriesComponent,
-    StoryComponent,
     TagListComponent
   ],
   imports: [

@@ -10,8 +10,7 @@ import { PrismicDocument } from '../prismic-document';
 export class ResourcesComponent implements OnInit {
   private resources: PrismicDocument[] = [];
 
-  constructor(private prismicService: PrismicService) {
-   }
+  constructor(private prismicService: PrismicService) {}
 
   ngOnInit() {
     this.getResources();

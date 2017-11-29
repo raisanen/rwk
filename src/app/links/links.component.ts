@@ -10,8 +10,7 @@ import { PrismicDocument } from '../prismic-document';
 export class LinksComponent implements OnInit {
   private links: PrismicDocument[] = [];
 
-  constructor(private prismicService: PrismicService) {
-  }
+  constructor(private prismicService: PrismicService) {}
 
   ngOnInit() {
     this.getLinks();
@@ -19,9 +18,7 @@ export class LinksComponent implements OnInit {
 
   getLinks(): void {
     this.prismicService.getLinks().subscribe(sres => {
-      console.log(sres);
       this.links = PrismicDocument.FromResults(sres.results);
-      console.log(this.links);
     });
   }
 }

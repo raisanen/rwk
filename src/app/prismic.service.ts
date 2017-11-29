@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { mergeMap } from 'rxjs/operators';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class PrismicService {
-  private static apiEndpoint = 'http://localhost:4200/api/v2';
+  private static apiEndpoint = environment.apiBase;
   private static masterRef: any = null;
 
   constructor(private http: HttpClient) { }
