@@ -129,7 +129,7 @@ img.inline-image {
 	float: right;
 	max-width: 50%;
 	max-height: 40vh;
-	margin: 12px 0;
+	margin: 12px 0 1rem 1rem;
 }
 
 ul.tag-list, ul.option-list {
@@ -164,13 +164,16 @@ ul.tag-list, ul.option-list {
         background-color: $color_tag;
         color: $color_text;
         a {
-            color: inherit;
+			color: inherit;
 		}
+	}
+	li.option {
+		opacity: .5;
 		&.active,
-        &:hover {
-            background-color: $color_link;
-            color: $color_body;
-        }
+		&:hover {
+			opacity: 1;
+			color: $color_link;
+		}
 	}
 	li.tag {
 		&:before {
@@ -187,6 +190,8 @@ ul.tag-list, ul.option-list {
         }
         &.active,
         &:hover {
+			background-color: $color_link;
+			color: $color_body;
             &:before {
                 border-right-color: $color_link;
             }

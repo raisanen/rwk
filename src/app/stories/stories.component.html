@@ -9,7 +9,7 @@
 </section>
 <section role="feed" class="feed stories-list" id="stories">
   <article *ngFor="let story of stories" class="single-story">
-      <section *ngIf="hasActiveTag(story)" class="story-content" [@visible]="hasActiveTag(story) ? 'yes' : ''">
+      <section *ngIf="hasActiveTag(story)" class="story-content">
         <i class="fa fa-file-text-o"></i>
         <h3>
           {{story.Title}}
