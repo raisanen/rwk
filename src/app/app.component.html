@@ -1,29 +1,6 @@
 <article>
   <header>
-    <h1 id="title"><a routerLink="/">Retrocomputing with Kalle</a></h1>
+    <h1 id="title">Retrocomputing with Kalle</h1>
   </header>
-  <nav>
-      <button id="nav-button">
-          <span class="line top"></span>
-          <span class="line mid"></span>
-          <span class="line bot"></span>
-      </button>
-      <ul id="nav-list">
-          <li>
-              <a href="#about">About</a>
-          </li>
-          <li class="active">
-              <a href="#stories">Stories</a>
-          </li>
-          <li>
-              <a href="#resources">Resources</a>
-          </li>
-          <li>
-              <a href="#links">Links</a>
-          </li>
-      </ul>
-  </nav>
-  <section role="document">
-      <router-outlet></router-outlet>      
-  </section>
+  <router-outlet></router-outlet>      
 </article>

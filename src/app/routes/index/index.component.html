@@ -1,10 +1,20 @@
-<section role="banner" id="about">
+<section role="banner" id="about" class="content about">
 	<div [innerHtml]="root.Description"></div>
 </section>
-<section role="navigation">
-	<h2>Filter</h2>
-	<app-tag-list [tags]="allTags"></app-tag-list>		
+<section class="content main">
+	<h2>Stories</h2>
+	<section role="navigation">
+		<app-tag-list [tags]="allTags" [title]="'Filter stories'"></app-tag-list>		
+	</section>
+	<app-stories></app-stories>
 </section>
-<app-stories></app-stories>
-<app-resources></app-resources>
-<app-links></app-links>
+<footer>
+	<section class="content">
+		<aside>
+			<app-resources></app-resources>
+		</aside>
+		<aside>
+			<app-links></app-links>
+		</aside>
+	</section>
+</footer>

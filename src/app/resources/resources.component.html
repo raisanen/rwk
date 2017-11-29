@@ -1,7 +1,7 @@
 <section role="list" class="list" id="resources">
     <h2>Resources</h2>
     <article class="resource" *ngFor="let res of resources">
-      <section *ngIf="hasActiveTag(res)">
+      <section>
           <h3>{{res.Title}}</h3>
           <p [innerHtml]="res.Description"></p>
           <ul class="links">
@@ -9,7 +9,6 @@
               <a href="{{ln.Url}}" class="link-{{ln.Type}}">{{ln.Name}}</a>
             </li>
           </ul>
-          <app-tag-list [tags]="res.tags"></app-tag-list>    
       </section>
     </article>
   </section>

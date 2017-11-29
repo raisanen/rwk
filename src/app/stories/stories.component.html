@@ -1,14 +1,13 @@
-<section role="feed" class="feed" id="stories">
-  <h2>Stories</h2>
-  <article *ngFor="let story of stories">
+<section role="feed" class="feed stories-list" id="stories">
+  <article *ngFor="let story of stories" class="single-story">
       <section *ngIf="hasActiveTag(story)">
         <h3>{{story.Title}}</h3>
-        <div *ngIf="currReadMore !== story.Id" [innerHtml]="story.Description"></div>
-        <div *ngIf="currReadMore === story.Id" [innerHtml]="story.Content"></div>
+        <div class="intro" [innerHtml]="story.Description"></div>
+        <div class="body"  *ngIf="currReadMore === story.Id" [innerHtml]="story.Content"></div>
 
         <a class="button" (click)="readMore(story.Id)">
-            <span *ngIf="currReadMore !== story.Id">Read more</span>
-            <span *ngIf="currReadMore === story.Id">Read less</span>
+            <span *ngIf="currReadMore !== story.Id">Read more &rsaquo;</span>
+            <span *ngIf="currReadMore === story.Id">Read less ^</span>
         </a>
     
         <app-tag-list [tags]="story.tags"></app-tag-list>    
