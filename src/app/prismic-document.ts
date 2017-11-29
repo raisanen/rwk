@@ -118,6 +118,10 @@ export class PrismicFile extends PrismicLink {
 }
 
 
+/**
+ * serialize + insertSpans -- from Prismic
+ */
+
 const serialize = (element, content) => {
 	// Fall back to the default HTML output
 	var TAG_NAMES = {
@@ -214,9 +218,9 @@ const insertSpans = (text, spans) => {
 			});
 			tagsStart[pos].forEach(function (span) {
 				// Open a tag
-				var url = null;
+				var url = span.url;
 				if (span.type == "hyperlink") {
-					span.url = url;
+					span.url = span.data.url;
 				}
 				var elt = {
 					span: span,
