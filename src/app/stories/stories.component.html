@@ -8,7 +8,12 @@
         <h3>{{story.Title}}</h3>
         <h4>{{story.Date | date:'yyyy-MM-dd'}}</h4>
         <div class="intro" [innerHtml]="story.Description"></div>
-        <div class="body"  *ngIf="currReadMore === story.Id" [innerHtml]="story.Content"></div>
+        
+        <div class="body"  
+          *ngIf="currReadMore === story.Id"
+          [innerHtml]="story.Content"
+          [@visible]="currReadMore === story.Id ? 'yes' : 'no'">
+        </div>
 
         <a class="button" (click)="readMore(story.Id)">
             <span *ngIf="currReadMore !== story.Id">Read more &rsaquo;</span>

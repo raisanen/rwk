@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 import { PrismicService } from '../prismic.service';
 import { ActiveTagService } from '../activetag.service';
 import { PrismicDocument } from '../prismic-document';
@@ -9,7 +11,19 @@ import { ContentWithTagsComponent } from '../content-with-tags/content-with-tags
 @Component({
   selector: 'app-stories',
   templateUrl: './stories.component.html',
-  styleUrls: ['./stories.component.scss']
+  styleUrls: ['./stories.component.scss'],
+  animations: [
+    trigger('visible', [
+      state('yes', style({transform: 'translate(0, 0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)', opacity: 0}),
+        animate(200)
+      ]),
+      transition('* => void', [
+        animate(200, style({transform: 'translateY(-100%)', opacity: 0}))
+      ])
+    ])
+  ]
 })
 
 export class StoriesComponent extends ContentWithTagsComponent implements OnInit {
