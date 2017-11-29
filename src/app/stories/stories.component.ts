@@ -41,7 +41,6 @@ export class StoriesComponent extends ContentWithTagsComponent implements OnInit
           this.tagCounts[t]++;
         });
       });
-      this.tagCounts['simh'] = 5;
 
       for (var k in this.tagCounts) {
         this.allTags.push(k);
