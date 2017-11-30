@@ -8,12 +8,14 @@ const config = {
 	localRoot: __dirname + '/dist',
 	remoteRoot: '/rwk'
 };
-const progressHandler = (data) => process.stdout.write("\r" + '[deploy] Uploading: ' +  data.percentComplete + '%');
+const progressHandler = (data) => {
+	process.stdout.write("\r" + '[deploy] Uploading: ' +  data.percentComplete + '%');
+};
 
-console.log('[deploy] Deploying...');
+console.log('[deploy] Uploading to ', config.host);
 
 ftp.deploy(config, (err) => {
-	(err) ? console.error(err) : console.log('\n[deploy] Finished.');
+	(err) ? console.error(err) : console.log('\r[deploy] Finished uploading to', config.host);
 });
 
 ftp.on('uploading', progressHandler);
