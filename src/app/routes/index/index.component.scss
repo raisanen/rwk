@@ -17,12 +17,10 @@ footer {
 	font-size: 12px;
 
     background-color: $color_foot;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#181818+0,333333+15,333333+100 */
-    background: #181818; /* Old browsers */
-    background:    -moz-linear-gradient(top, #181818 0%, #333333 10%, #333333 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #181818 0%, #333333 10%,#333333 100%); /* Chrome10-25,Safari5.1-6 */
-    background:   linear-gradient(to bottom, #181818 0%, #333333 10%,#333333 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181818', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+    background: $color_foot; /* Old browsers */
+    background:    -moz-linear-gradient(top, $color_foot_shadow 0%, $color_foot 10%, $color_foot 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $color_foot_shadow 0%, $color_foot 10%,$color_foot 100%); /* Chrome10-25,Safari5.1-6 */
+    background:   linear-gradient(to bottom, $color_foot_shadow 0%, $color_foot 10%,$color_foot 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	color: $color_body;
 
 	aside {
