@@ -43,10 +43,36 @@ code, pre {
 	}
 }
 
+.site-header {
+	margin-bottom: 1.5rem;
+	padding: 1rem 0 2rem;
+	position: relative;
+
+	header {
+		position: relative;
+		z-index: 1;
+	}
+
+	&::before {
+		position: absolute;
+		content: '';
+		display: block;
+		z-index: 0;
+		left: -5%;
+		top: -20%;
+		bottom: 15%;
+		width: 110%;
+
+		transform: rotate(-1.5deg);
+
+		background: $color_tag;
+	}
+}
+
 body > app-root > article {
 	margin: 0;
 
-	>header,
+	>.site-header>header,
 	section.content {
 		margin: 15px auto;
 		width: 50rem;
