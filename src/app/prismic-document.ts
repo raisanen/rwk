@@ -175,7 +175,7 @@ const serialize = (element, content) => {
 	}
 
 	if (element.type === 'hyperlink') {
-		return '<a href="' + element.url + '">' + content + '</a>';
+		return '<a href="' + element.url + '" target="_blank">' + content + '</a>';
 	}
 
 	if (element.type === 'label') {
