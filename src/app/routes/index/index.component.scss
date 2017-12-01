@@ -12,17 +12,20 @@ footer.site-footer {
 	overflow: hidden;
 
 	margin-top: 100px;
-	padding: 50px 0 100px;
+	padding: 80px 0 100px;
 
 
 	font-size: 12px;
 
     background-color: $color_foot;
     background: $color_foot; /* Old browsers */
-    background:    -moz-linear-gradient(top, $color_foot_shadow 0%, $color_foot 10%, $color_foot 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, $color_foot_shadow 0%, $color_foot 10%,$color_foot 100%); /* Chrome10-25,Safari5.1-6 */
-    background:   linear-gradient(to bottom, $color_foot_shadow 0%, $color_foot 10%,$color_foot 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -webkit-linear-gradient(269deg, $color_foot_shadow 0%, $color_foot 25%, $color_foot 100%); /* Chrome10-25,Safari5.1-6 */
+    background:    -moz-linear-gradient(269deg, $color_foot_shadow 0%, $color_foot 25%, $color_foot 100%); /* FF3.6-15 */
+    background:         linear-gradient(181deg, $color_foot_shadow 0%, $color_foot 25%, $color_foot 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	color: $color_body;
+
+	-webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+	        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
 
 	aside {
 		float: left;

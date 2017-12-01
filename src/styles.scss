@@ -5,13 +5,15 @@
 body,
 html {
     margin: 0;
-    padding: 0;
+	padding: 0;
+	
     font-family: $font_body;
-    font-size: 20px;
+	font-size: 20px;
+	
 	background: $color_body; /* Old browsers */
-	background: -moz-linear-gradient(left, $color_body 0%, $color_body_grey 50%, $color_body 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left, $color_body 0%,$color_body_grey 50%, $color_body 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right, $color_body 0%,$color_body_grey 50%, $color_body 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background:    -moz-linear-gradient(left, $color_body 0%, $color_body_grey 50%, $color_body 100%); /* FF3.6-15 */
+	background:         linear-gradient(to right, $color_body 0%,$color_body_grey 50%, $color_body 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 code, pre {
@@ -44,28 +46,17 @@ code, pre {
 }
 
 .site-header {
+	background-color: rgba($color_tag, .7);
 	margin-bottom: 1.5rem;
 	padding: 1rem 0 2rem;
 	position: relative;
 
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+	        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+
 	header {
 		position: relative;
 		z-index: 1;
-	}
-
-	&::before {
-		position: absolute;
-		content: '';
-		display: block;
-		z-index: 0;
-		left: -5%;
-		top: -20%;
-		bottom: 15%;
-		width: 110%;
-
-		transform: rotate(-1.5deg);
-
-		background: $color_tag;
 	}
 }
 
